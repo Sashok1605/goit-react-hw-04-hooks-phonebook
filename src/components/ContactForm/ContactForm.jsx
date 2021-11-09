@@ -23,11 +23,11 @@ const ContactForm = ({ contacts, onSubmit }) => {
   };
 
   const findByName = contactName => {
-    return this.props.contacts.some(({ name }) => name === contactName);
+    return contacts.some(({ name }) => name === contactName);
   };
 
   const findByNumber = contactNumber => {
-    return this.props.contacts.some(({ number }) => number === contactNumber);
+    return contacts.some(({ number }) => number === contactNumber);
   };
 
   const handleSubmit = e => {
@@ -37,10 +37,6 @@ const ContactForm = ({ contacts, onSubmit }) => {
     }
     e.preventDefault();
     onSubmit({ name, number });
-    reset();
-  };
-
-  const reset = () => {
     setName('');
     setNumber('');
   };
